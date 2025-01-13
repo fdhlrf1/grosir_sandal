@@ -1,0 +1,77 @@
+
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+/* @import '~animate.css/animate.min.css'; */
+
+
+@font-face{
+    font-family: 'Autumn';
+    src: url('./fonts/autumn_in_september/autumn.ttf');
+}
+
+@font-face{
+    font-family: 'Agdasima';
+    src: url('./fonts/Agdasima/Agdasima-Regular.ttf');
+}
+
+
+
+@font-face {
+    font-family: 'Lato_Regular';
+     src: url('../../public/fonts/Lato/Lato-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato_Bold';
+    src: url('../../public/fonts/Lato/Lato-Bold.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato_Black';
+     src: url('../../public/fonts/Lato/Lato-Black.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato_Medium';
+     src: url('../../public/fonts/Lato/Lato-Medium.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Lato_Light';
+     src: url('../../public/fonts/Lato/Lato-Light.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Lato_ExtraLight';
+     src: url('../../public/fonts/Lato/Lato-ExtraLight.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Lato_Thin';
+     src: url('../../public/fonts/Lato/Lato-Thin.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Lato_Italic';
+     src: url('../../public/fonts/Lato/Lato-Italic.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+

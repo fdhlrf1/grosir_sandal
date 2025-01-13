@@ -1,0 +1,94 @@
+/* @font-face {
+    font-family: poppinsregular;
+    src: url(../fonts/poppinscoba/Poppins-Regular.ttf);
+}
+
+.poppinsregular {
+    font-family: poppinsregular;
+} */
+
+  /* Tambahkan CSS untuk menyamakan ukuran */
+
+/* .transition-transform {
+    transition: transform 0.3s ease;
+}
+.rotate-0 {
+    transform: rotate(0deg);
+}
+.rotate-90 {
+    transform: rotate(90deg);
+}
+.sidebar {
+    height: 100vh;
+    overflow-y: auto;
+} */
+
+/* body {
+    font-family: 'Poppins', sans-serif !important;
+} */
+
+
+
+/* .overflow-x-auto {
+    overflow-x: auto;
+}
+
+table {
+    min-width: 1000px;
+} */
+    /* Gaya dasar untuk input */
+    #tanggal_lunas {
+        background-color: #f9fafb;
+        /* Sedikit lebih terang dari default */
+        border: 2px solid #cbd5e1;
+        /* Warna border lebih lembut */
+        padding: 10px;
+        /* Tambahkan padding agar input terasa lebih besar */
+        border-radius: 8px;
+        /* Border melengkung */
+        font-size: 14px;
+        /* Ukuran teks */
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        /* Transisi untuk interaksi */
+    }
+
+    /* Saat input difokuskan */
+    #tanggal_lunas:focus {
+        border-color: #4f46e5;
+        /* Warna border saat fokus */
+        box-shadow: 0 0 5px rgba(79, 70, 229, 0.5);
+        /* Tambahkan shadow agar lebih menonjol */
+        outline: none;
+        /* Hilangkan outline default */
+    }
+
+    /* Saat ada error (menggunakan kelas @error dari Laravel) */
+        #tanggal_lunas.border-red-500 {
+            border-color: #f87171;
+            /* Warna merah untuk error */
+            box-shadow: 0 0 5px rgba(248, 113, 113, 0.5);
+            /* Shadow merah */
+        }
+
+        /* Gaya saat hover */
+        #tanggal_lunas:hover {
+            background-color: #eef2ff;
+            /* Warna latar belakang sedikit berubah saat hover */
+        }
+
+        /* Dark mode support */
+        .dark #tanggal_lunas {
+            background-color: #374151;
+            border-color: #4b5563;
+            color: #f3f4f6;
+        }
+
+        .dark #tanggal_lunas:focus {
+            border-color: #818cf8;
+            box-shadow: 0 0 5px rgba(129, 140, 248, 0.5);
+        }
+
+        .dark #tanggal_lunas.border-red-500 {
+            border-color: #fca5a5;
+            box-shadow: 0 0 5px rgba(252, 165, 165, 0.5);
+        }
