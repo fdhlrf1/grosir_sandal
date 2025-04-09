@@ -20,7 +20,7 @@ class LaporanPenjualanController extends Controller
         $id_toko = session('id_toko');
         $id_user = session('id_user');
 
-        $penjualans = Penjualan::where('id_toko', $id_toko)->latest()->simplePaginate(5);
+        $penjualans = Penjualan::with(['detailPenjualan.satuan', 'konsumen', 'user'])->where('id_toko', $id_toko)->latest()->simplePaginate(5);
 
         return view('laporan.lappenjualan', [
             'title' => 'Laporan Penjualan',
@@ -48,7 +48,8 @@ class LaporanPenjualanController extends Controller
 
         $id_toko = session('id_toko');
 
-        $penjualans = Penjualan::where('id_toko', $id_toko)
+        $penjualans = Penjualan::with(['detailPenjualan.satuan', 'konsumen', 'user'])
+            ->where('id_toko', $id_toko)
             ->when($startFormatted && $endFormatted, function ($query) use ($startFormatted, $endFormatted) {
                 // dd('star$startFormatted Date:', $startFormatted, 'end$endFormatted Date:', $endFormatted);
                 return $query->whereRaw('DATE(tanggal_pembayaran) BETWEEN ? AND ?', [$startFormatted, $endFormatted]);
@@ -78,7 +79,8 @@ class LaporanPenjualanController extends Controller
         $id_toko = session('id_toko');
 
         if (empty($start) && empty($end) && empty($metode) && empty($status)) {
-            $penjualans = Penjualan::where('id_toko', $id_toko)->get();
+            $penjualans = Penjualan::with(['detailPenjualan.satuan', 'konsumen', 'user'])
+                ->where('id_toko', $id_toko)->get();
 
             $pendapatan = $penjualans->sum('total');
         } elseif (empty($start) || empty($end)) {
@@ -91,7 +93,8 @@ class LaporanPenjualanController extends Controller
                 return redirect()->back()->with('errortanggal', 'Format tanggal tidak valid.');
             }
             // Query data penjualan dengan filter
-            $penjualans = Penjualan::where('id_toko', $id_toko)
+            $penjualans = Penjualan::with(['detailPenjualan.satuan', 'konsumen', 'user'])
+                ->where('id_toko', $id_toko)
                 ->when($startFormatted && $endFormatted, function ($query) use ($startFormatted, $endFormatted) {
                     return $query->whereRaw('DATE(tanggal_pembayaran) BETWEEN ? AND ?', [$startFormatted, $endFormatted]);
                 })
@@ -136,7 +139,8 @@ class LaporanPenjualanController extends Controller
 
 
         if (empty($start) && empty($end) && empty($metode_pembayaran) && empty($status)) {
-            $penjualans = Penjualan::where('id_toko', $id_toko)->get();
+            $penjualans = Penjualan::with(['detailPenjualan.satuan', 'konsumen', 'user'])
+                ->where('id_toko', $id_toko)->get();
             $pendapatan = $penjualans->sum('total');
 
             $fileName = 'laporan_penjualan_semua_periode.pdf';
@@ -149,7 +153,8 @@ class LaporanPenjualanController extends Controller
             }
 
             // Query data penjualan dengan filter
-            $penjualans = Penjualan::where('id_toko', $id_toko)
+            $penjualans = Penjualan::with(['detailPenjualan.satuan', 'konsumen', 'user'])
+                ->where('id_toko', $id_toko)
                 ->when($startFormatted && $endFormatted, function ($query) use ($startFormatted, $endFormatted) {
                     return $query->whereRaw('DATE(tanggal_pembayaran) BETWEEN ? AND ?', [$startFormatted, $endFormatted]);
                 })
@@ -192,7 +197,8 @@ class LaporanPenjualanController extends Controller
         $id_toko = session('id_toko');
 
         if (empty($start) && empty($end) && empty($metode_pembayaran) && empty($status)) {
-            $penjualans = Penjualan::where('id_toko', $id_toko)->get();
+            $penjualans = Penjualan::with(['detailPenjualan.satuan', 'konsumen', 'user'])
+                ->where('id_toko', $id_toko)->get();
             $pendapatan = $penjualans->sum('total');
             // Jika semua parameter kosong, ambil semua data penjualan
             return Excel::download(new PenjualanExport(null, null, null, null, $pendapatan), 'laporan_penjualan_semua_periode.xlsx');
@@ -206,7 +212,8 @@ class LaporanPenjualanController extends Controller
             }
 
             // Query data penjualan dengan filter
-            $penjualans = Penjualan::where('id_toko', $id_toko)
+            $penjualans = Penjualan::with(['detailPenjualan.satuan', 'konsumen', 'user'])
+                ->where('id_toko', $id_toko)
                 ->when(
                     $startFormatted && $endFormatted,
                     function ($query) use ($startFormatted, $endFormatted) {
@@ -233,7 +240,8 @@ class LaporanPenjualanController extends Controller
     public function showDetail($nopenjualan)
     {
         // Ambil detail penjualan berdasarkan nopenjualan
-        $penjualan = Penjualan::where('nopenjualan', $nopenjualan)->first();
+        $penjualan = Penjualan::with(['detailPenjualan.satuan', 'konsumen', 'user'])
+            ->where('nopenjualan', $nopenjualan)->first();
         $detailPenjualan = DetailPenjualan::where('nopenjualan', $nopenjualan)->get();
 
         return view('laporan.lappenjualan', [

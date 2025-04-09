@@ -63,7 +63,7 @@ class PembelianController extends Controller
         }
 
         // Ambil data barang dengan filter berdasarkan id_toko dan pencarian
-        $barangs = Barang::with('pemasok', 'satuan', 'kategori')
+        $barangs = Barang::with('pemasok', 'satuan', 'kategori', 'motif')
             ->where('id_toko', $id_toko)
             ->latest()->get();
 

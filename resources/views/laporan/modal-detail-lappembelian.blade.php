@@ -1,7 +1,7 @@
 @foreach ($pembelians as $pembelian)
     @php
         // Ambil detail pembelian berdasarkan nomor pembelian
-        $detailPembelian = \App\Models\DetailPembelian::where('nopembelian', $pembelian->nopembelian)->get();
+        $detailPembelian = $pembelian->detailPembelian;
     @endphp
 
     <!-- Modal untuk detail pembelian -->

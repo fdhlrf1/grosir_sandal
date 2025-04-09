@@ -1,7 +1,7 @@
 @foreach ($penjualans as $penjualan)
     @php
         // Ambil detail penjualan berdasarkan nomor penjualan
-        $detailPenjualan = \App\Models\DetailPenjualan::where('nopenjualan', $penjualan->nopenjualan)->get();
+        $detailPenjualan = $penjualan->detailPenjualan;
     @endphp
 
     <!-- Modal untuk detail penjualan -->

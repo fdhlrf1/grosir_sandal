@@ -18,7 +18,8 @@ class LaporanPembelianController extends Controller
     {
         $id_user = session('id_user');
         $id_toko = session('id_toko');
-        $pembelians = Pembelian::where('id_toko', $id_toko)->latest()->simplePaginate(5);
+        $pembelians = Pembelian::with('detailPembelian.satuan', 'user', 'pemasok')
+            ->where('id_toko', $id_toko)->latest()->simplePaginate(5);
 
         return view('laporan.lappembelian', [
             'title' => 'Laporan Pembelian',
@@ -41,7 +42,8 @@ class LaporanPembelianController extends Controller
 
         $id_toko = session('id_toko');
 
-        $pembelians = Pembelian::where('id_toko', $id_toko)
+        $pembelians = Pembelian::with('detailPembelian.satuan', 'user', 'pemasok')
+            ->where('id_toko', $id_toko)
             ->when($start2Formatted && $end2Formatted, function ($query) use ($start2Formatted, $end2Formatted) {
                 // dd('star$start2Formatted Date:', $start2Formatted, 'end2$end2Formatted Date:', $end2Formatted);
                 return $query->whereRaw('DATE(tanggal_pembelian) BETWEEN ? AND ?', [$start2Formatted, $end2Formatted]);
@@ -61,7 +63,8 @@ class LaporanPembelianController extends Controller
         $id_toko = session('id_toko');
 
         if (empty($start2) && empty($end2) && empty($metode) && empty($status)) {
-            $pembelians = Pembelian::where('id_toko', $id_toko)->get();
+            $pembelians = Pembelian::with('detailPembelian.satuan', 'user', 'pemasok')
+                ->where('id_toko', $id_toko)->get();
 
             $pengeluaran = $pembelians->sum('total');
         } elseif (empty($start2) || empty($end2)) {
@@ -74,7 +77,8 @@ class LaporanPembelianController extends Controller
                 return redirect()->back()->with('errortanggal', 'Format tanggal tidak valid.');
             }
             // Query data Pembelian dengan filter
-            $pembelians = Pembelian::where('id_toko', $id_toko)
+            $pembelians = Pembelian::with('detailPembelian.satuan', 'user', 'pemasok')
+                ->where('id_toko', $id_toko)
                 ->when($start2Formatted && $end2Formatted, function ($query) use ($start2Formatted, $end2Formatted) {
                     return $query->whereRaw('DATE(tanggal_pembelian) BETWEEN ? AND ?', [$start2Formatted, $end2Formatted]);
                 })->orderBy('tanggal_pembelian', 'desc')->get();
@@ -108,7 +112,8 @@ class LaporanPembelianController extends Controller
 
 
         if (empty($start2) && empty($end2)) {
-            $pembelians = Pembelian::where('id_toko', $id_toko)->get();
+            $pembelians = Pembelian::with('detailPembelian.satuan', 'user', 'pemasok')
+                ->where('id_toko', $id_toko)->get();
             $pengeluaran = $pembelians->sum('total');
 
             $filename = 'laporan_pembelian_semua_periode.pdf';
@@ -121,7 +126,8 @@ class LaporanPembelianController extends Controller
             }
 
             // Query data penjualan dengan filter
-            $pembelians = Pembelian::where('id_toko', $id_toko)
+            $pembelians = Pembelian::with('detailPembelian.satuan', 'user', 'pemasok')
+                ->where('id_toko', $id_toko)
                 ->when($start2Formatted && $end2Formatted, function ($query) use ($start2Formatted, $end2Formatted) {
                     return $query->whereRaw('DATE(tanggal_pembelian) BETWEEN ? AND ?', [$start2Formatted, $end2Formatted]);
                 })
@@ -159,7 +165,8 @@ class LaporanPembelianController extends Controller
         $id_toko = session('id_toko');
 
         if (empty($start2) && empty($end2)) {
-            $pembelians = Pembelian::where('id_toko', $id_toko)->get();
+            $pembelians = Pembelian::with('detailPembelian.satuan', 'user', 'pemasok')
+                ->where('id_toko', $id_toko)->get();
             $pengeluaran = $pembelians->sum('total');
             // Jika semua parameter kosong, ambil semua data penjualan
             return Excel::download(new PembelianExport(null, null, $pengeluaran), 'laporan_pembelian_semua_periode.xlsx');
@@ -172,7 +179,8 @@ class LaporanPembelianController extends Controller
                 return redirect()->back()->withErrors(['msg' => 'Format tanggal salah: ' . $e->getMessage()]);
             }
 
-            $pembelians = Pembelian::where('id_toko', $id_toko)
+            $pembelians = Pembelian::with('detailPembelian.satuan', 'user', 'pemasok')
+                ->where('id_toko', $id_toko)
                 ->when(
                     $start2Formatted && $end2Formatted,
                     function ($query) use ($start2Formatted, $end2Formatted) {
@@ -188,7 +196,8 @@ class LaporanPembelianController extends Controller
 
     public function showDetailPembelian($nopembelian)
     {
-        $pembelian = Pembelian::where('nopembelian', $nopembelian)->first();
+        $pembelian = Pembelian::with('detailPembelian.satuan', 'user', 'pemasok')
+            ->where('nopembelian', $nopembelian)->first();
         $detailPembelian = DetailPembelian::where('nopembelian', $nopembelian)->get();
 
         return view('laporan.lappembelian', [

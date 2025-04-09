@@ -56,10 +56,8 @@ class BerandaController extends Controller
             : 0;
 
         // PENDAPATAN
-        $tPendapatanBulanIni = Penjualan::where('id_toko', $id_toko)
-            ->whereYear('tanggal_pembayaran', $now->year)
-            ->whereMonth('tanggal_pembayaran', $now->month)
-            ->sum('total');
+        $tPendapatanBulanIni = $tPenjualanBulanIni;
+
         // dd($tPendapatanBulanIni);
         $tPendapatanBulanLalu = Penjualan::where('id_toko', $id_toko)
             ->whereYear('tanggal_pembayaran', $now->copy()->subMonth()->year)

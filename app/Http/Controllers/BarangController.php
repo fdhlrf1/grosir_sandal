@@ -69,7 +69,7 @@ class BarangController extends Controller
         //     })->latest()->simplePaginate(5);
 
         // Query untuk $barangs
-        $barangs = Barang::with('pemasok', 'satuan', 'kategori', 'motif')
+        $barangs = Barang::with(['pemasok', 'satuan', 'kategori', 'motif'])
             ->where('id_toko', $id_toko)
             ->where('stok', '>', 0)
             ->when(
