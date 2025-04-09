@@ -66,14 +66,55 @@ DB_PASSWORD=
 <h3 class="code-line" data-line-start=92 data-line-end=93 ><a id="_9_Jalankan_Project_92"></a>▶️ 9. Jalankan Project</h3>
 <pre><code class="has-line-data" data-line-start="94" data-line-end="96" class="language-bash">php artisan serve
 </code></pre>
-<h2 class="code-line" data-line-start=97 data-line-end=98 ><a id="Lisensi_97"></a>Lisensi</h2>
-<p class="has-line-data" data-line-start="99" data-line-end="100">The Laravel framework is open-sourced software licensed under the <a href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
-<h2 class="code-line" data-line-start=101 data-line-end=102 ><a id="Kredit_101"></a>Kredit</h2>
-<p class="has-line-data" data-line-start="102" data-line-end="103">Proyek ini dikembangkan oleh:</p>
+<hr>
+<h2 class="code-line" data-line-start=99 data-line-end=100 ><a id="_Akun_Login_Default_99"></a>🔐 Akun Login Default</h2>
+<p class="has-line-data" data-line-start="101" data-line-end="102">Setelah proses seeding selesai (<code>php artisan migrate --seed</code>), kamu dapat login ke aplikasi menggunakan akun berikut:</p>
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>Role</th>
+<th>Username</th>
+<th>Password</th>
+<th>Nama Toko</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Admin</td>
+<td>admin</td>
+<td>admin</td>
+<td>New Spon</td>
+</tr>
+<tr>
+<td>Kasir</td>
+<td>petugas</td>
+<td>petugas</td>
+<td>New Spon</td>
+</tr>
+<tr>
+<td>Admin</td>
+<td>admin2</td>
+<td>admin2</td>
+<td>New Spon 2</td>
+</tr>
+<tr>
+<td>Kasir</td>
+<td>petugas2</td>
+<td>petugas2</td>
+<td>New Spon 2</td>
+</tr>
+</tbody>
+</table>
+<p class="has-line-data" data-line-start="110" data-line-end="111">⚠️ <strong>Penting:</strong> Pastikan untuk segera mengganti password akun-akun default ini demi keamanan, terutama jika aplikasi diunggah ke server publik.</p>
+<hr>
+<h2 class="code-line" data-line-start=114 data-line-end=115 ><a id="Lisensi_114"></a>Lisensi</h2>
+<p class="has-line-data" data-line-start="116" data-line-end="117">The Laravel framework is open-sourced software licensed under the <a href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<h2 class="code-line" data-line-start=118 data-line-end=119 ><a id="Kredit_118"></a>Kredit</h2>
+<p class="has-line-data" data-line-start="119" data-line-end="120">Proyek ini dikembangkan oleh:</p>
 <ul>
-<li class="has-line-data" data-line-start="104" data-line-end="105">👤 Fadhil Rafi Fauzan</li>
-<li class="has-line-data" data-line-start="105" data-line-end="106">📧 Email: [fadhilrafifauzan.17@gmail.com]</li>
-<li class="has-line-data" data-line-start="106" data-line-end="108">🐙 GitHub: <a href="http://github.com/fdhlrf.1">github.com/fdhlrf.1</a></li>
+<li class="has-line-data" data-line-start="121" data-line-end="122">👤 Fadhil Rafi Fauzan</li>
+<li class="has-line-data" data-line-start="122" data-line-end="123">📧 Email: [fadhilrafifauzan.17@gmail.com]</li>
+<li class="has-line-data" data-line-start="123" data-line-end="125">🐙 GitHub: <a href="http://github.com/fdhlrf.1">github.com/fdhlrf.1</a></li>
 </ul>
-<p class="has-line-data" data-line-start="108" data-line-end="110">© 2025 Grosir Sandal — Hak Cipta Dilindungi Undang-Undang.<br>
+<p class="has-line-data" data-line-start="125" data-line-end="127">© 2024 Grosir Sandal — Hak Cipta Dilindungi Undang-Undang.<br>
 Terima kasih telah menggunakan aplikasi ini! ⭐</p>
