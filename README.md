@@ -16,30 +16,31 @@
 <li class="has-line-data" data-line-start="19" data-line-end="21">✅ Pendataan Piutang Konsumen</li>
 </ul>
 <hr>
-<h3 class="code-line" data-line-start=23 data-line-end=24 ><a id="_Prasyarat_23"></a>💡 Prasyarat</h3>
+<h2 class="code-line" data-line-start=23 data-line-end=24 ><a id="_Prasyarat_23"></a>💡 Prasyarat</h2>
 <p class="has-line-data" data-line-start="25" data-line-end="26">Sebelum memulai, pastikan kamu sudah menginstall:</p>
-<p class="has-line-data" data-line-start="27" data-line-end="33">Komponen    Versi Minimum   Keterangan<br>
-🐘 PHP  &gt;= 8.1  Disarankan versi terbaru<br>
-🎼 Composer -   Untuk mengelola dependensi PHP<br>
-🧰 Node.js  -   Digunakan bersama Tailwind + Vite<br>
-📦 npm  -   Biasanya sudah include di Node.js<br>
-🐬 MySQL / 🐳 MariaDB   -   Untuk database aplikasi</p>
+<ul>
+<li class="has-line-data" data-line-start="27" data-line-end="28">🐘 PHP    &gt;= 8.1  Disarankan versi terbaru</li>
+<li class="has-line-data" data-line-start="28" data-line-end="29">🎼 Composer   -   Untuk mengelola dependensi PHP</li>
+<li class="has-line-data" data-line-start="29" data-line-end="30">🧰 Node.js    -   Digunakan bersama Tailwind + Vite</li>
+<li class="has-line-data" data-line-start="30" data-line-end="31">📦 npm    -   Biasanya sudah include di Node.js</li>
+<li class="has-line-data" data-line-start="31" data-line-end="33">🐬 MySQL / 🐳 MariaDB -   Untuk database aplikasi</li>
+</ul>
 <hr>
-<h2 class="code-line" data-line-start=36 data-line-end=37 ><a id="_Instalasi_dan_Konfigurasi_36"></a>🚀 Instalasi dan Konfigurasi</h2>
-<h3 class="code-line" data-line-start=38 data-line-end=39 ><a id="_1_Clone_Project_38"></a>🧱 1. Clone Project</h3>
-<pre><code class="has-line-data" data-line-start="41" data-line-end="44" class="language-bash">git <span class="hljs-built_in">clone</span> https://github.com/username-kamu/nama-repo.git
+<h2 class="code-line" data-line-start=35 data-line-end=36 ><a id="_Instalasi_dan_Konfigurasi_35"></a>🚀 Instalasi dan Konfigurasi</h2>
+<h3 class="code-line" data-line-start=37 data-line-end=38 ><a id="_1_Clone_Project_37"></a>🧱 1. Clone Project</h3>
+<pre><code class="has-line-data" data-line-start="40" data-line-end="43" class="language-bash">git <span class="hljs-built_in">clone</span> https://github.com/username-kamu/nama-repo.git
 <span class="hljs-built_in">cd</span> nama-repo
 </code></pre>
-<h3 class="code-line" data-line-start=45 data-line-end=46 ><a id="_2_Install_Depedency_45"></a>📦 2. Install Depedency</h3>
-<pre><code class="has-line-data" data-line-start="47" data-line-end="50" class="language-bash">composer install
+<h3 class="code-line" data-line-start=44 data-line-end=45 ><a id="_2_Install_Depedency_44"></a>📦 2. Install Depedency</h3>
+<pre><code class="has-line-data" data-line-start="46" data-line-end="49" class="language-bash">composer install
 npm install
 </code></pre>
-<h3 class="code-line" data-line-start=51 data-line-end=52 ><a id="_3_Setup_File_env_51"></a>⚙️ 3. Setup File <code>.env</code></h3>
-<pre><code class="has-line-data" data-line-start="53" data-line-end="55" class="language-bash">cp .env.example .env
+<h3 class="code-line" data-line-start=50 data-line-end=51 ><a id="_3_Setup_File_env_50"></a>⚙️ 3. Setup File <code>.env</code></h3>
+<pre><code class="has-line-data" data-line-start="52" data-line-end="54" class="language-bash">cp .env.example .env
 </code></pre>
-<h3 class="code-line" data-line-start=56 data-line-end=57 ><a id="_4_Konfigurasi_File_env_56"></a>🛠️ 4. Konfigurasi File <code>.env</code></h3>
-<p class="has-line-data" data-line-start="58" data-line-end="59">Setelah menyalin file <code>.env</code>, pastikan kamu mengatur konfigurasi dasar seperti berikut:</p>
-<pre><code class="has-line-data" data-line-start="61" data-line-end="71" class="language-env">APP_NAME=&quot;Grosir Sandal&quot;
+<h3 class="code-line" data-line-start=55 data-line-end=56 ><a id="_4_Konfigurasi_File_env_55"></a>🛠️ 4. Konfigurasi File <code>.env</code></h3>
+<p class="has-line-data" data-line-start="57" data-line-end="58">Setelah menyalin file <code>.env</code>, pastikan kamu mengatur konfigurasi dasar seperti berikut:</p>
+<pre><code class="has-line-data" data-line-start="60" data-line-end="70" class="language-env">APP_NAME=&quot;Grosir Sandal&quot;
 APP_URL=http://localhost:8000
 
 DB_CONNECTION=mysql
@@ -49,28 +50,30 @@ DB_DATABASE=grosirsandal
 DB_USERNAME=root
 DB_PASSWORD=
 </code></pre>
-<p class="has-line-data" data-line-start="71" data-line-end="72">⚠️ Pastikan nama database (DB_DATABASE) sudah dibuat di MySQL kamu sebelum menjalankan migrasi.</p>
-<h3 class="code-line" data-line-start=73 data-line-end=74 ><a id="_5_Generate_Key_73"></a>🔐 5. Generate Key</h3>
-<pre><code class="has-line-data" data-line-start="75" data-line-end="77" class="language-bash">php artisan key:generate
+<p class="has-line-data" data-line-start="70" data-line-end="71">⚠️ Pastikan nama database (DB_DATABASE) sudah dibuat di MySQL kamu sebelum menjalankan migrasi.</p>
+<h3 class="code-line" data-line-start=72 data-line-end=73 ><a id="_5_Generate_Key_72"></a>🔐 5. Generate Key</h3>
+<pre><code class="has-line-data" data-line-start="74" data-line-end="76" class="language-bash">php artisan key:generate
 </code></pre>
-<h3 class="code-line" data-line-start=78 data-line-end=79 ><a id="_6_Setup_Database_78"></a>🗄 6. Setup Database</h3>
-<pre><code class="has-line-data" data-line-start="80" data-line-end="82" class="language-bash">php artisan migrate --seed
+<h3 class="code-line" data-line-start=77 data-line-end=78 ><a id="_6_Setup_Database_77"></a>🗄 6. Setup Database</h3>
+<pre><code class="has-line-data" data-line-start="79" data-line-end="81" class="language-bash">php artisan migrate --seed
 </code></pre>
-<h3 class="code-line" data-line-start=83 data-line-end=84 ><a id="_7_Compile_Aset_Frontend_TailwindCSS__Vite_83"></a>🌐 7. Compile Aset Frontend (TailwindCSS &amp; Vite)</h3>
-<pre><code class="has-line-data" data-line-start="85" data-line-end="87" class="language-bash">npm run dev
+<h3 class="code-line" data-line-start=82 data-line-end=83 ><a id="_7_Compile_Aset_Frontend_TailwindCSS__Vite_82"></a>🌐 7. Compile Aset Frontend (TailwindCSS &amp; Vite)</h3>
+<pre><code class="has-line-data" data-line-start="84" data-line-end="86" class="language-bash">npm run dev
 </code></pre>
-<h3 class="code-line" data-line-start=88 data-line-end=89 ><a id="_8_Link_Storage_88"></a>🔗 8. Link Storage</h3>
-<pre><code class="has-line-data" data-line-start="90" data-line-end="92" class="language-bash">php artisan storage:link
+<h3 class="code-line" data-line-start=87 data-line-end=88 ><a id="_8_Link_Storage_87"></a>🔗 8. Link Storage</h3>
+<pre><code class="has-line-data" data-line-start="89" data-line-end="91" class="language-bash">php artisan storage:link
 </code></pre>
-<h3 class="code-line" data-line-start=93 data-line-end=94 ><a id="_9_Jalankan_Project_93"></a>▶️ 9. Jalankan Project</h3>
-<pre><code class="has-line-data" data-line-start="95" data-line-end="97" class="language-bash">php artisan serve
+<h3 class="code-line" data-line-start=92 data-line-end=93 ><a id="_9_Jalankan_Project_92"></a>▶️ 9. Jalankan Project</h3>
+<pre><code class="has-line-data" data-line-start="94" data-line-end="96" class="language-bash">php artisan serve
 </code></pre>
-<h2 class="code-line" data-line-start=98 data-line-end=99 ><a id="Lisensi_98"></a>Lisensi</h2>
-<p class="has-line-data" data-line-start="100" data-line-end="101">The Laravel framework is open-sourced software licensed under the <a href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
-<h2 class="code-line" data-line-start=102 data-line-end=103 ><a id="_Kredit_102"></a>Kredit</h2>
-<p class="has-line-data" data-line-start="103" data-line-end="104">Proyek ini dikembangkan oleh:</p>
-<p class="has-line-data" data-line-start="105" data-line-end="108">👤 Fadhil Rafi Fauzan<br>
-📧 Email: [fadhilrafifauzan.17@gmail.com]<br>
-🐙 GitHub: <a href="http://github.com/fdhlrf.1">github.com/fdhlrf.1</a></p>
-<p class="has-line-data" data-line-start="109" data-line-end="111">© 2024 Grosir Sandal — Hak Cipta Dilindungi Undang-Undang.<br>
+<h2 class="code-line" data-line-start=97 data-line-end=98 ><a id="Lisensi_97"></a>Lisensi</h2>
+<p class="has-line-data" data-line-start="99" data-line-end="100">The Laravel framework is open-sourced software licensed under the <a href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
+<h2 class="code-line" data-line-start=101 data-line-end=102 ><a id="Kredit_101"></a>Kredit</h2>
+<p class="has-line-data" data-line-start="102" data-line-end="103">Proyek ini dikembangkan oleh:</p>
+<ul>
+<li class="has-line-data" data-line-start="104" data-line-end="105">👤 Fadhil Rafi Fauzan</li>
+<li class="has-line-data" data-line-start="105" data-line-end="106">📧 Email: [fadhilrafifauzan.17@gmail.com]</li>
+<li class="has-line-data" data-line-start="106" data-line-end="108">🐙 GitHub: <a href="http://github.com/fdhlrf.1">github.com/fdhlrf.1</a></li>
+</ul>
+<p class="has-line-data" data-line-start="108" data-line-end="110">© 2025 Grosir Sandal — Hak Cipta Dilindungi Undang-Undang.<br>
 Terima kasih telah menggunakan aplikasi ini! ⭐</p>
