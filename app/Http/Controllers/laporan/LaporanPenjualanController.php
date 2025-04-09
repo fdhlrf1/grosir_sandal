@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\laporan;
+namespace App\Http\Controllers\Laporan;
 
 use App\Models\Penjualan;
 use Illuminate\Http\Request;

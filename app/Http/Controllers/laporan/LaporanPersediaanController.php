@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\laporan;
+namespace App\Http\Controllers\Laporan;
 
 use Illuminate\Http\Request;
 use App\Exports\PersediaanExport;

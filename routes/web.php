@@ -1,35 +1,30 @@
 <?php
 
-use App\Models\Ukuran;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\KasirController;
-use App\Http\Controllers\MotifController;
-use App\Http\Controllers\WarnaController;
-use App\Http\Controllers\BarangController;
+use App\Http\Controllers\Admin\KelolaKasirController;
+use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BerandaController;
-use App\Http\Controllers\SatuanController;
-use App\Http\Controllers\UkuranController;
-use App\Http\Controllers\PemasokController;
-use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\KelolaController;
-use App\Http\Controllers\KelolaKasirController;
-use App\Http\Controllers\KonsumenController;
-use App\Http\Controllers\PelunasanController;
-use App\Http\Controllers\PembelianController;
-use App\Http\Controllers\TransaksiController;
-use App\Http\Controllers\RegistrationController;
-use App\Http\Controllers\laporan\LaporanPembelianController;
-use App\Http\Controllers\laporan\LaporanPenjualanController;
-use App\Http\Controllers\laporan\LaporanPersediaanController;
+use App\Http\Controllers\Laporan\LaporanPembelianController;
+use App\Http\Controllers\Laporan\LaporanPenjualanController;
+use App\Http\Controllers\Laporan\LaporanPersediaanController;
+use App\Http\Controllers\Master\BarangController;
+use App\Http\Controllers\Master\KategoriController;
+use App\Http\Controllers\Master\KonsumenController;
+use App\Http\Controllers\Master\MotifController;
+use App\Http\Controllers\Master\PemasokController;
+use App\Http\Controllers\Master\SatuanController;
+use App\Http\Controllers\Master\UkuranController;
+use App\Http\Controllers\Transaksi\PelunasanController;
+use App\Http\Controllers\Transaksi\PembelianController;
+use App\Http\Controllers\Transaksi\TransaksiController;
+use Illuminate\Support\Facades\Route;
+
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/', [AuthController::class, 'showLoginForm'])->name('login');
     Route::post('/', [AuthController::class, 'login']);
 
-    Route::get('/register', [RegistrationController::class, 'showRegistrationForm'])->name('register');
-    Route::post('/register', [RegistrationController::class, 'register']);
+    // Route::get('/register', [RegistrationController::class, 'showRegistrationForm'])->name('register');
+    // Route::post('/register', [RegistrationController::class, 'register']);
 });
 
 Route::middleware(['auth'])->group(

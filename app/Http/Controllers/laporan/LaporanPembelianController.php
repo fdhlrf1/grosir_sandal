@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\laporan;
+namespace App\Http\Controllers\Laporan;
 
 use App\Exports\PembelianExport;
 use Barryvdh\DomPDF\PDF;
