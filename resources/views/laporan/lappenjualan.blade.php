@@ -110,6 +110,7 @@
             <thead class="text-xs font-medium tracking-wider text-left text-gray-600 uppercase bg-gray-200">
                 <tr>
                     <th class="px-3 py-3 text-center border border-slate-300">No.</th>
+                    <th class="px-3 py-3 text-center border border-slate-300">Petugas</th>
                     <th class="px-3 py-3 text-center border border-slate-300">No Penjualan</th>
                     <th class="px-3 py-3 text-center border border-slate-300">Nama Konsumen</th>
                     <th class="px-3 py-3 text-center border border-slate-300">Total</th>
@@ -125,6 +126,9 @@
                     <tr class="transition-colors duration-300 ease-in-out hover:bg-gray-100">
                         <td class="px-3 py-4 text-center border border-slate-300 whitespace-nowrap">
                             {{ $loop->iteration + $penjualans->firstItem() - 1 }}
+                        </td>
+                        <td class="px-3 py-4 border border-slate-300 whitespace-nowrap">
+                            {{ $penjualan->user->name }}
                         </td>
                         <td class="px-3 py-4 border border-slate-300 whitespace-nowrap">
                             {{ $penjualan->nopenjualan }}
@@ -177,7 +181,8 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="9" class="px-3 py-4 text-center text-red-700 bg-red-100 border border-red-400">
+                        <td colspan="9"
+                            class="px-3 py-4 text-center text-red-700 bg-red-100 border border-red-400">
                             Data Penjualan belum Tersedia.
                         </td>
                     </tr>

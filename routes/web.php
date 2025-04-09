@@ -48,6 +48,8 @@ Route::middleware(['auth'])->group(
         Route::get('/databarang', [BarangController::class, 'index'])->name('databarang');
         Route::resource('/barang', BarangController::class);
         Route::put('/barang/{id}', [BarangController::class, 'update'])->name('barang.update');
+        Route::put('/barang/hapusgambar/{id}', [BarangController::class, 'hapusGambar'])->name('barang.hapus');
+
 
         Route::get('/datakonsumen', [KonsumenController::class, 'index'])->name('datakonsumen');
         Route::resource('/konsumen', KonsumenController::class);

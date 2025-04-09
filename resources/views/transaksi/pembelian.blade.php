@@ -55,7 +55,7 @@
 
         <h1 class="pb-2 mb-4 text-xl font-semibold text-gray-800 border-b border-gray-300">
             <span class="text-blue-600">Kelola Barang Anda</span>
-            <span class="block mt-2 text-base font-light text-gray-600">Pilih barang dari daftar atau tambahkan
+            <span class="block mt-2 text-base italic text-red-500">*Pilih barang dari daftar atau tambahkan
                 baru.</span>
         </h1>
         @php

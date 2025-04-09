@@ -24,7 +24,10 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call(class: [
+            TokoSeeder::class,
+            RoleSeeder::class,
             UserSeeder::class,
+            MasterSeeder::class,
         ]);
     }
 }

@@ -137,11 +137,14 @@
                                     <span class="text-sm font-bold text-gray-900 dark:text-white">Rp.
                                         {{ number_format($penjualan->bayar, 0, ',', '.') }}</span>
                                 </div>
-                                <div class="flex justify-between">
-                                    <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Kembalian:</span>
-                                    <span class="text-sm font-bold text-gray-900 dark:text-white">Rp.
-                                        {{ number_format($penjualan->kembalian, 0, ',', '.') }}</span>
-                                </div>
+                                @if ($penjualan->metode_pembayaran === 'Tunai')
+                                    <div class="flex justify-between">
+                                        <span
+                                            class="text-sm font-medium text-gray-700 dark:text-gray-300">Kembalian:</span>
+                                        <span class="text-sm font-bold text-gray-900 dark:text-white">Rp.
+                                            {{ number_format($penjualan->kembalian, 0, ',', '.') }}</span>
+                                    </div>
+                                @endif
                             </div>
                         </div>
 

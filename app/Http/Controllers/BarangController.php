@@ -221,6 +221,8 @@ class BarangController extends Controller
             'gambar' => 'nullable|image|mimes:jpeg,jpg,png|max:2048',
         ]);
 
+        // dd($validated);
+
         // Log::info('Motif ID sebelum update: ' . $validated['id_motif']);
 
         //     dd($validated);
@@ -286,6 +288,22 @@ class BarangController extends Controller
 
         return redirect()->route('barang.index')->with(['success' => 'Data Berhasil Diubah']);
     }
+
+    public function hapusGambar($id): RedirectResponse
+    {
+        // Cari data barang berdasarkan ID
+        $barang = Barang::findOrFail($id);
+        dd($barang);
+        // Hapus file gambar jika ada
+        if ($barang->gambar && Storage::exists('public/barang/' . $barang->gambar)) {
+            Storage::delete('public/barang/' . $barang->gambar);
+            $barang->gambar = null;
+            $barang->save();
+        }
+
+        return redirect()->back()->with('success', 'Gambar berhasil dihapus.');
+    }
+
 
 
     public function destroy($id): RedirectResponse

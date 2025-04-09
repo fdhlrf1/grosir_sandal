@@ -202,6 +202,16 @@
                         <img src="{{ asset('storage/barang/' . $barang->gambar) }}" alt="Current Image"
                             width="100">
                     </div>
+
+                    <!-- Tombol Hapus Gambar -->
+                    <form action="{{ route('barang.hapus', $barang->id) }}" method="POST" class="mt-2">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit"
+                            class="px-4 py-2 bg-red-600 text-white text-sm font-medium rounded-md hover:bg-red-700 focus:outline-none focus:ring focus:ring-red-200">
+                            Hapus Gambar
+                        </button>
+                    </form>
                 @endif
                 @error('gambar')
                     <p class="mt-2 text-sm text-red-600">{{ $message }}</p>

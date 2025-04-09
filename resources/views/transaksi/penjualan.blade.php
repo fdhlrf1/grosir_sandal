@@ -366,6 +366,8 @@
             </div>
             <div class="mb-4">
                 <label for="bayar" class="block font-medium text-gray-700">Bayar</label>
+
+
                 <input type="text" id="bayar" name="bayar"
                     value="{{ is_numeric(session('form_data.bayar', old('bayar'))) ? number_format((float) session('form_data.bayar', old('bayar')), 0, ',', '.') : session('form_data.bayar', old('bayar')) }}"
                     class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm @error('bayar') border-red-500 @enderror
@@ -374,6 +376,9 @@
                 @error('bayar')
                     <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                 @enderror
+
+                <p class="text-sm font-intitalic text-red-500">*Bayar secara lunas
+                    atau membayar sebagian sebagai DP (kredit).</p>
             </div>
 
         </div>

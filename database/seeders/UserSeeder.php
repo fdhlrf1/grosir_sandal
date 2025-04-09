@@ -36,6 +36,22 @@ class UserSeeder extends Seeder
                 'role_id' => 1,
                 'toko_id' => 2,
             ],
+            [
+                'name' => 'Fadhil',
+                'username' => 'petugas',
+                'nama_toko' => 'New Spon',
+                'password' => Hash::make('petugas'),
+                'role_id' => 2,
+                'toko_id' => 1,
+            ],
+            [
+                'name' => 'Fadhil 2',
+                'username' => 'petugas2',
+                'nama_toko' => 'New Spon 2',
+                'password' => Hash::make('petugas2'),
+                'role_id' => 2,
+                'toko_id' => 2,
+            ],
 
         ];
 

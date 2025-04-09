@@ -19,6 +19,7 @@ class PembelianExport implements FromCollection, WithHeadings
     {
         return [
             "No.",
+            "Petugas",
             "No Pembelian",
             "Nama Pemasok",
             "Total",
@@ -58,6 +59,7 @@ class PembelianExport implements FromCollection, WithHeadings
         $data2 = $pembelians->map(function ($pembelian, $index) {
             return [
                 $index + 1,
+                $pembelian->user->name ?? 'N/A',
                 "'" . $pembelian->nopembelian,
                 $pembelian->pemasok->nama ?? 'N/A',
                 'Rp. ' . number_format($pembelian->total, 0, ',', '.'),
@@ -69,6 +71,7 @@ class PembelianExport implements FromCollection, WithHeadings
         // Tambahkan baris untuk total pengeluaran
         $data2->push([
             '', // Kolom No.
+            '', // Kolom Petugas
             '', // Kolom No Pembelian
             'Total Pengeluaran', // Label untuk kolom Nama Pemasok
             'Rp. ' . number_format($this->pengeluaran, 0, ',', '.'), // Kolom Total Pengeluaran

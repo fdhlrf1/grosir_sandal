@@ -8,66 +8,109 @@
     <title>Laporan Penjualan</title>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <style>
-        /* Aturan umum */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 3px;
             background-color: #ffffff;
             color: #000000;
+            font-size: 12px;
         }
 
         .container {
-            max-width: 800px;
-            /* Ukuran kontainer */
+            max-width: 100%;
             margin: auto;
-            padding: 0;
+            padding: 0 10px;
         }
 
         h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-size: 18px;
+            margin-bottom: 12px;
             text-align: center;
         }
 
         .header-info {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            font-size: 11px;
         }
 
         .header-info div {
-            margin-bottom: 0;
-            font-weight: bold;
+            margin-bottom: 4px;
+            width: 48%;
         }
 
         .header-info span {
-            margin-left: 10px;
+            margin-left: 4px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
-            font-size: 14px;
+            margin-top: 10px;
+            font-size: 11px;
         }
 
         th,
         td {
-            padding: 8px;
+            padding: 4px;
             text-align: center;
             border: 1px solid #000000;
+            word-wrap: break-word;
         }
 
         th {
             background-color: #f0f0f0;
         }
 
-        /* Mengatur lebar kolom Total Pembayaran */
-        td:nth-child(4) {
-            width: 20%;
-            /* Atur lebar kolom Total Pembayaran sesuai kebutuhan */
+        /* Batasi lebar kolom */
+        td:nth-child(1) {
+            width: 3%;
         }
+
+        /* No */
+        td:nth-child(2) {
+            width: 10%;
+        }
+
+        /* Petugas */
+        td:nth-child(3) {
+            width: 12%;
+        }
+
+        /* No Penjualan */
+        td:nth-child(4) {
+            width: 12%;
+        }
+
+        /* Konsumen */
+        td:nth-child(5) {
+            width: 10%;
+        }
+
+        /* Total */
+        td:nth-child(6) {
+            width: 10%;
+        }
+
+        /* Tanggal */
+        td:nth-child(7) {
+            width: 10%;
+        }
+
+        /* Waktu */
+        td:nth-child(8) {
+            width: 12%;
+        }
+
+        /* Metode */
+        td:nth-child(9) {
+            width: 10%;
+        }
+
+        /* Status */
 
         .no-data {
             background-color: #fed7e2;
@@ -77,31 +120,22 @@
 
         .status {
             display: inline-block;
-            padding: 5px;
+            padding: 2px 4px;
             font-weight: bold;
         }
 
-        /* Media print untuk cetakan */
         @media print {
             body {
-                margin: 10mm;
-                /* Margin: atas, kanan, bawah, kiri */
+                margin: 5mm;
             }
 
             .container {
                 border: none;
                 width: auto;
-                /* Agar lebar otomatis mengikuti margin */
-            }
-
-            h1 {
-                margin-bottom: 20px;
             }
 
             table {
                 border: 1px solid #000;
-                width: 100%;
-                /* Pastikan tabel mengisi lebar */
             }
 
             th,
@@ -143,6 +177,7 @@
             <thead>
                 <tr>
                     <th>No.</th>
+                    <th>Petugas</th>
                     <th>No Penjualan</th>
                     <th>Nama Konsumen</th>
                     <th>Total</th>
@@ -156,6 +191,7 @@
                 @forelse ($penjualans as $penjualan)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
+                        <td>{{ $penjualan->user->name }}</td>
                         <td>{{ $penjualan->nopenjualan }}</td>
                         <td>{{ $penjualan->konsumen->nama }}</td>
                         <td>Rp. {{ number_format($penjualan->total, 0, ',', '.') }}</td>

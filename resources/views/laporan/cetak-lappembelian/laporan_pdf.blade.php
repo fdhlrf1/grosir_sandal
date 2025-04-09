@@ -137,6 +137,7 @@
             <thead>
                 <tr>
                     <th>No.</th>
+                    <th>Petugas</th>
                     <th>No Pembelian</th>
                     <th>Pemasok</th>
                     <th>Total</th>
@@ -148,6 +149,7 @@
                 @forelse ($pembelians as $pembelian)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
+                        <td>{{ $pembelian->user->name }}</td>
                         <td class="px-3 py-4 border border-slate-300">{{ $pembelian->nopembelian }}</td>
                         <td>{{ $pembelian->pemasok->nama }}</td>
                         <td>Rp. {{ number_format($pembelian->total, 0, ',', '.') }}</td>

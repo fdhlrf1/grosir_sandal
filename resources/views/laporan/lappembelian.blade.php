@@ -73,6 +73,7 @@
             <thead class="text-xs font-medium tracking-wider text-left text-gray-600 uppercase bg-gray-200">
                 <tr>
                     <th class="px-3 py-3 text-center border border-slate-300">No.</th>
+                    <th class="px-3 py-3 text-center border border-slate-300">Petugas</th>
                     <th class="px-3 py-3 text-center border border-slate-300">No Pembelian</th>
                     <th class="px-3 py-3 text-center border border-slate-300">Pemasok</th>
                     <th class="px-3 py-3 text-center border border-slate-300">Total</th>
@@ -90,6 +91,8 @@
                     <tr>
                         <td class="px-3 py-4 text-center border border-slate-300 whitespace-nowrap">
                             {{ $loop->iteration + $pembelians->firstItem() - 1 }}</td>
+                        <td class="px-3 py-4 text-center border border-slate-300 whitespace-nowrap">
+                            {{ $pembelian->user->name }}</td>
                         <td class="px-3 py-4 text-center border border-slate-300 whitespace-nowrap">
                             {{ $pembelian->nopembelian }}</td>
                         <td class="px-3 py-4 text-center border border-slate-300 whitespace-nowrap">
