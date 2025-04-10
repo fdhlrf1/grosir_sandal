@@ -113,7 +113,7 @@ DB_PASSWORD=
 <p class="has-line-data" data-line-start="119" data-line-end="120">Proyek ini dikembangkan oleh:</p>
 <ul>
 <li class="has-line-data" data-line-start="121" data-line-end="122">👤 Fadhil Rafi Fauzan</li>
-<li class="has-line-data" data-line-start="122" data-line-end="123">📧 Email: [fadhilrafifauzan.17@gmail.com]</li>
+<li class="has-line-data" data-line-start="122" data-line-end="123">📧 Email: fadhilrafifauzan.17@gmail.com</li>
 <li class="has-line-data" data-line-start="123" data-line-end="125">🐙 GitHub: <a href="http://github.com/fdhlrf.1">github.com/fdhlrf.1</a></li>
 </ul>
 <p class="has-line-data" data-line-start="125" data-line-end="127">© 2024 Grosir Sandal — Hak Cipta Dilindungi Undang-Undang.<br>
